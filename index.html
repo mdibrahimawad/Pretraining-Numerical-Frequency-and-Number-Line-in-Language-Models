@@ -57,23 +57,6 @@
       border-radius: 4px;
       margin-bottom: 1.5rem;
     }
-    /* "Coming soon" buttons: non-clickable, muted, with a Soon tag */
-    .button.is-soon {
-      cursor: default;
-      opacity: 0.72;
-      pointer-events: none;
-    }
-    .soon-tag {
-      margin-left: 0.5em;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      background: #ffffff;
-      color: #363636;
-      border-radius: 999px;
-      padding: 0.05em 0.55em;
-    }
   </style>
 </head>
 <body>
@@ -90,9 +73,9 @@
             <span class="author-block">
               <a href="mailto:ahmed.elshehaby@mbzuai.ac.ae">Ahmed Elshehaby</a><sup>*</sup>,</span>
             <span class="author-block">
-              <a href="mailto:hilal.alquabeh@mbzuai.ac.ae">Hilal AlQuabeh</a><sup>&dagger;</sup>,</span>
+              <a href="mailto:velibor.bojkovic@mbzuai.ac.ae">Velibor Bojkovic</a><sup>&dagger;</sup>,</span>
             <span class="author-block">
-              <a href="mailto:velibor.bojkovic@mbzuai.ac.ae">Velibor Bojkovic</a><sup>&dagger;</sup></span>
+              <a href="mailto:hilal.alquabeh@mbzuai.ac.ae">Hilal AlQuabeh</a><sup>&dagger;</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -109,35 +92,24 @@
             <div class="publication-links">
               <!-- Paper -->
               <span class="link-block">
-                <span class="button is-normal is-rounded is-dark is-soon" title="Coming soon">
+                <a href="#" onclick="return false;" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                  <span class="soon-tag">Soon</span>
-                </span>
+                  <span>soon!</span>
+                </a>
               </span>
               <!-- arXiv -->
               <span class="link-block">
-                <span class="button is-normal is-rounded is-dark is-soon" title="Coming soon">
+                <a href="#" onclick="return false;" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv</span>
-                  <span class="soon-tag">Soon</span>
-                </span>
+                  <span>soon!</span>
+                </a>
               </span>
               <!-- Code -->
               <span class="link-block">
-                <span class="button is-normal is-rounded is-dark is-soon" title="Coming soon">
+                <a href="#" onclick="return false;" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>Code</span>
-                  <span class="soon-tag">Soon</span>
-                </span>
-              </span>
-              <!-- Poster -->
-              <span class="link-block">
-                <span class="button is-normal is-rounded is-dark is-soon" title="Coming soon">
-                  <span class="icon"><i class="fas fa-image"></i></span>
-                  <span>Poster</span>
-                  <span class="soon-tag">Soon</span>
-                </span>
+                  <span>soon!</span>
+                </a>
               </span>
             </div>
 
@@ -152,11 +124,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="./static/images/arch_v2.png" class="figure-image" alt="Overview of the proposed pipeline.">
-      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+      <p class="caption-text" style="margin-top: 1rem;">
         <b>Overview of our pipeline.</b> (A) We estimate the magnitude-frequency exponent <i>&alpha;</i> by extracting integers from pretraining corpora and fitting a power law to count(<i>N</i>).
         (B) We obtain the compression factor <i>&beta;</i> by extracting hidden representations from transformer layers, projecting them via PCA, and analyzing spacing across numerical magnitudes.
         (C) We then analyze the relationship between corpus-level statistics (<i>&alpha;</i>) and representation geometry (<i>&beta;</i>) across models.
-      </h2>
+      </p>
     </div>
   </div>
 </section>
@@ -426,26 +398,12 @@
             <i>&beta;</i>); flatter distributions provide more exposure to large numbers, resulting in
             weaker compression (larger <i>&beta;</i>).
           </p>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column is-three-quarters has-text-centered">
-            <img src="./static/images/alpha_beta.png" class="figure-image" alt="Alpha vs beta across matched corpus-model pairs.">
-            <p class="caption-text has-text-justified">
-              Relationship between the signed corpus frequency exponent <i>&alpha;</i> and the PCA-based
-              numerical scaling factor <i>&beta;</i>. Each point aggregates the matched model family for
-              one pretraining corpus. The matched corpus&ndash;model pairs show a monotonic trend:
-              less negative <i>&alpha;</i> corresponds to larger <i>&beta;</i>.
-            </p>
-          </div>
-        </div>
-
-        <div class="content has-text-justified">
           <p>
-            The empirical picture is consistent: <b>The Stack</b> has the flattest integer-frequency
+            The empirical picture is consistent and monotonic &mdash; less negative <i>&alpha;</i>
+            corresponds to larger <i>&beta;</i>. <b>The Stack</b> has the flattest integer-frequency
             decay (<i>&alpha;</i> = &minus;1.18) and its StarCoderBase models exhibit the largest scaling
             factors (mean <i>&beta;</i> = 6.85). <b>Dolma</b> shows intermediate decay
-            (<i>&alpha;</i> = &minus;1.30) and its OLMo models have intermediate <i>&beta;</i>
+            (<i>&alpha;</i> = &minus;1.30) with intermediate <i>&beta;</i> for its OLMo models
             (1.67, 1.54). <b>RedPajama</b> (<i>&alpha;</i> = &minus;1.40) and
             <b>Falcon RefinedWeb</b> (<i>&alpha;</i> = &minus;1.42) have steeper frequency decay, and their
             models exhibit the smallest scaling factors. This supports the hypothesis that flatter
@@ -498,11 +456,10 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{elshehaby2026numberline,
-  author    = {Elshehaby, Ahmed and Awad, Mohammed},
-  title     = {Pretraining Numerical Frequency and Number-Line in Language Models},
-  booktitle = {ICML 2026 Workshop on Mechanistic Interpretability},
-  year      = {2026},
+    <pre><code>@inproceedings{awad2026pretraining,
+  title={Pretraining Numerical Frequency and Number-Line in Language Models},
+  author={Awad, Mohammed Ibrahim and Elshehaby, Ahmed and Bojkovic, Velibor and AlQuabeh, Hilal},
+  booktitle={Mechanistic Interpretability Workshop at ICML 2026}
 }</code></pre>
   </div>
 </section>
