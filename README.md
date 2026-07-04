@@ -1,31 +1,32 @@
-# Project Page — Pretraining Numerical Frequency and Number-Line in Language Models
+# Pretraining Numerical Frequency and Number-Line in Language Models
 
-Project webpage for the ICML 2026 Mechanistic Interpretability Workshop paper, built on the
-[Nerfies project page template](https://github.com/nerfies/nerfies.github.io).
+Project page and code for our paper accepted at the **ICML 2026 Workshop on Mechanistic Interpretability**.
 
-## Deploy on GitHub Pages (for the poster QR code)
+**Authors:** Ahmed Elshehaby*, Mohammed Awad* (*equal contribution)
+**Affiliation:** Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
 
-1. Create a new public repo, e.g. `numberline-frequency` (or `<username>.github.io` for a root URL).
-2. Copy everything in this folder to the repo root and push.
-3. In the repo: **Settings → Pages → Source: Deploy from a branch → main / (root)** → Save.
-4. Your page will be live at `https://<username>.github.io/numberline-frequency/` within a minute or two.
-5. Generate the QR code pointing to that URL (any QR generator works) and drop it on the poster.
+## Overview
 
-## Before going live — fill in the placeholder links
+Large language models encode numerical magnitude in a compressed, non-uniform internal geometry, but the pretraining factors behind this remain unclear. We study whether corpus-level integer statistics are reflected in the learned number-line geometry of pretrained LLMs.
 
-In `index.html`, search for `href="#"` and replace with real URLs:
-- **arXiv** button → your arXiv abstract page (once uploaded)
-- **Code** button → your GitHub repo (or delete the button if the code isn't public)
-- Footer GitHub icon → same
+For four documented pretraining corpora we count integers in [0, 10,000] and fit a magnitude-frequency power law, count(N) ∝ N^α. For nine corresponding base models we project hidden states onto a one-dimensional number line via PCA and estimate a scaling factor β. We find that flatter integer-frequency distributions (less negative α) are associated with less compressed number-line geometry (larger β), and that larger β corresponds to higher number-comparison accuracy.
 
-The **Paper** button already works: it points to the compiled PDF at
-`static/paper/number_line_freq.pdf` (compiled from your Overleaf source).
+## Links
 
-## Structure
+- 📄 [Paper (PDF)](./static/paper/number_line_freq.pdf)
+- 🌐 [Project page](https://<your-username>.github.io/<repo-name>/)
 
+## Citation
+
+```bibtex
+@inproceedings{elshehaby2026numberline,
+  author    = {Elshehaby, Ahmed and Awad, Mohammed},
+  title     = {Pretraining Numerical Frequency and Number-Line in Language Models},
+  booktitle = {ICML 2026 Workshop on Mechanistic Interpretability},
+  year      = {2026},
+}
 ```
-index.html              — the page
-static/css, static/js   — Bulma + template assets (unchanged from Nerfies)
-static/images/          — paper figures converted from the PDF figures
-static/paper/           — compiled paper PDF
-```
+
+## Acknowledgements
+
+The project page is built on the [Nerfies](https://github.com/nerfies/nerfies.github.io) template.
