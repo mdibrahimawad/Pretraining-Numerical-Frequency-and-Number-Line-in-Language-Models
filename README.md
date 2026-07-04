@@ -1,4 +1,4 @@
-<img width="2964" height="1532" alt="image" src="https://github.com/user-attachments/assets/a92c36eb-e445-4fcf-9b61-c50baf104eaf" /># Pretraining Numerical Frequency and Number-Line in Language Models
+# Pretraining Numerical Frequency and Number-Line in Language Models
 
 Project page and code for our paper accepted at the **ICML 2026 Workshop on Mechanistic Interpretability**.
 
@@ -14,7 +14,7 @@ For four documented pretraining corpora we count integers in [0, 10,000] and fit
 ## Links
 
 - 📄 [Paper (PDF)](./static/paper/number_line_freq.pdf)
-- 🌐 [Project page]([https://<your-username>.github.io/<repo-name>/](https://mdibrahimawad.github.io/Pretraining-Numerical-Frequency-and-Number-Line-in-Language-Models/))
+- 🌐 [Project page](https://mdibrahimawad.github.io/Pretraining-Numerical-Frequency-and-Number-Line-in-Language-Models/))
 
 ## Citation
 
