@@ -10,7 +10,7 @@ Project page and code for our paper accepted at the **Mechanistic Interpretabili
 
 Large language models encode numerical magnitude in a compressed, non-uniform internal geometry, but the pretraining factors behind this remain unclear. We study whether corpus-level integer statistics are reflected in the learned number-line geometry of pretrained LLMs.
 
-For four documented pretraining corpora we count integers in [0, 10,000] and fit a magnitude-frequency power law, count(N) ∝ N^α. For nine corresponding base models we project hidden states onto a one-dimensional number line via PCA and estimate a scaling factor β. We find that flatter integer-frequency distributions (less negative α) are associated with less compressed number-line geometry (larger β), and that larger β corresponds to higher number-comparison accuracy.
+For four documented pretraining corpora we count integers in [0 : 10,000] and fit a magnitude-frequency power law, count(N) ∝ N^α. For nine corresponding base models we project hidden states onto a one-dimensional number line via PCA and estimate a scaling factor β. We find that flatter integer-frequency distributions (less negative α) are associated with less compressed number-line geometry (larger β), and that larger β corresponds to higher number-comparison accuracy.
 
 ## Links
 
