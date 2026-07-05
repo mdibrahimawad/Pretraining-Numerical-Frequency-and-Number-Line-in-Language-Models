@@ -15,7 +15,7 @@ For four documented pretraining corpora we count integers in [0 : 10,000] and fi
 ## Links
 
 - 📄 Paper — coming soon
-- 🌐 [Project page](https://mdibrahimawad.github.io/Pretraining-Numerical-Frequency-and-Number-Line-in-Language-Models/)
+- 🌐 [Project page](https://mdibrahimawad.github.io/llm-num-freq/)
 
 ## Citation
 
